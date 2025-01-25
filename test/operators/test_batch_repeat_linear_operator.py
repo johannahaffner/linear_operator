@@ -42,7 +42,6 @@ class TestBatchRepeatLinearOperatorBatch(LinearOperatorTestCase, unittest.TestCa
         toeplitz_column = torch.tensor([[4, 0, 0, 1], [3, 0, -0.5, -1]], dtype=torch.float)
         toeplitz_column.detach_()
         return BatchRepeatLinearOperator(ToeplitzLinearOperator(toeplitz_column), torch.Size((3,)))
-        return BatchRepeatLinearOperator(ToeplitzLinearOperator(toeplitz_column), torch.Size((3,)))
 
     def evaluate_linear_op(self, linear_op):
         evaluated = linear_op.base_linear_op.to_dense()
